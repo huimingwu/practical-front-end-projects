@@ -1,0 +1,80 @@
+/*清除margin padding*/
+* {
+    margin: 0;
+    padding: 0;
+}
+/*设置h2*/
+h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+/*设置魔方居中*/
+.container {
+    text-align: center;
+}
+
+/*123456每一个面*/
+#box section{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 3px solid #000000;
+    font-size: 130px;
+    text-align: center;
+    background: rgba(255,200,100,0.8);
+}
+/*box容器*/
+#box {
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: -160px;
+    /*设置保留3d及基点位置*/
+    transform-style: preserve-3d;
+    transform-origin: 80px 80px 0;
+    /*动画*/
+    animation-name: animation;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 3s
+}
+
+/*第一面*/
+#box .one {
+    transform:  translateZ(80px);
+}
+
+/*第二面*/
+#box .two {
+    transform:  rotateY(90deg) translateZ(80px);
+}
+
+/*第三面*/
+#box .three {
+    transform: rotateX(90deg) translateZ(80px);
+}
+
+/*第四面*/
+#box .four {
+    transform: translateZ(-80px);
+}
+
+/*第五面*/
+#box .five {
+    transform:   rotateY(-90deg) rotateZ(90deg) translateZ(80px);
+}
+
+/*第六面*/
+#box .six {
+    transform:  rotateX(-90deg) rotateZ(90deg) translateZ(80px);
+}
+
+/*动画效果*/
+@keyframes animation
+{
+    from,to{}
+    16% { transform: rotateY(-90deg);}
+    33% { transform: rotateY(-90deg) rotateZ(135deg);}
+    50% { transform: rotateY(225deg) rotateZ(135deg);}
+    66% { transform: rotateY(135deg) rotateX(135deg);}
+    83% { transform: rotateX(135deg);}
+}

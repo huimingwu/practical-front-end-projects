@@ -1,0 +1,33 @@
+/*清除margin和padding*/
+* {
+    margin: 0;
+    padding: 0;
+}
+/*背景图像*/
+body {
+    background-image: url("../img/bg.jpg");
+}
+/*播放按钮*/
+#music {
+    text-align: right;
+    position: absolute;
+    right: 1rem;
+    z-index: 999;
+}
+/*DIV外盒子*/
+.container {
+    margin: 0 auto 0 auto;
+    width: 8.0625rem;
+    perspective: 25rem;
+}
+/*DIV*/
+#box {
+    transform-style: preserve-3d;
+    height: 100%;
+    perspective-origin: 50% 50%;
+}
+#box > div {
+    position: absolute;
+    width: 8.0625rem;
+    height: 73.125rem;
+}
